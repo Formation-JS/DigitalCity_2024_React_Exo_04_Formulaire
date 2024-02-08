@@ -64,7 +64,7 @@ const Calculator = () => {
             <div>
                 <label>Résultat : </label>
                 <input type="text"
-                    value={result} readOnly={true} />
+                    value={result} readOnly />
             </div>
         </form>
     );

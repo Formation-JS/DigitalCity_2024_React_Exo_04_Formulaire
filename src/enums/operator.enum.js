@@ -1,8 +1,8 @@
 const operatorEnum = {
-    plus: 1,
-    minus: 2,
-    mult: 3,
-    div: 4
+    plus: 'plus',
+    minus: 'minus',
+    mult: 'mult',
+    div: 'div'
 }
 
 Object.freeze(operatorEnum);
