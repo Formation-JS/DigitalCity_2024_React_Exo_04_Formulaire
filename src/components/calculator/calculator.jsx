@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import operatorEnum from '../../enums/operator.enum';
 
+const numberRegex = /^[0-9]*(\.[0-9]*)?$/;
 
 const Calculator = () => {
 
@@ -10,9 +11,9 @@ const Calculator = () => {
     const [result, setResult] = useState('');
 
     const handleNumberInput = (e, setNbInput) => {
-        const nbInput = e.target.value;
+        const nbInput = e.target.value.replace(',', '.');
 
-        if (/^[0-9]*$/.test(nbInput)) {
+        if (numberRegex.test(nbInput)) {
             setNbInput(nbInput);
         }
     };
@@ -64,7 +65,7 @@ const Calculator = () => {
             <div>
                 <label>Résultat : </label>
                 <input type="text"
-                    value={result} readOnly />
+                    value={isNaN(result) ? 'Erreur' : result} readOnly />
             </div>
         </form>
     );
