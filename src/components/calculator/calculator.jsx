@@ -34,6 +34,8 @@ const Calculator = () => {
                     return v1 * v2;
                 case operatorEnum.div:
                     return v1 / v2;
+                default : 
+                    return NaN;
             }
         });
     };
